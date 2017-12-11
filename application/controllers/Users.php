@@ -110,12 +110,21 @@ class Users extends CI_Controller
     {
         $data['user'] = $this->user_model->get_details($id);
 
-        if (exists($data['user'])) {
+        if (empty($data['user'])) {
+            $this->session->set_flashdata('user_not_found', 'Requested User does not exist');
+            redirect('');
+
+        } else {
             $this->load->view('templates/header');
             $this->load->view('users/profile', $data);
             $this->load->view('templates/footer');
-        } else {
-            $this->session->set_flashdata('user_not_found', 'Requested User does not exist');
+        }
+
+        $this->form_validation->set_rules('requesting', 'Requesting', 'required');
+
+        if ($this->form_validation->run() === TRUE) {
+            $this->load->model('request_model');
+            $this->request_model->send_request($this->session->userdata('user_id'), $id);
             redirect('');
         }
     }

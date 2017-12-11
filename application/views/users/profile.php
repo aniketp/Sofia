@@ -1,5 +1,9 @@
 <h2>Profile</h2>
 
 <p><?php echo $user['name'] ?></p>
+<p><?php echo $this->session->userdata['user_id'] ?></p>
 
-<a href="#" class="btn btn-success">Send Friend Request</a>
+<?php echo form_open('users/profile'); ?>
+    <input type="hidden" name="requesting">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
