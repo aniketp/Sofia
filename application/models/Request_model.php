@@ -25,8 +25,11 @@ class Request_model extends CI_Model {
 
     // Accept Friend Request
     public function accept_request($sent_by_id = 0, $sent_to_id = 0) {
-        $sent_by = $this->db->get_where('users', array('id' => $sent_by_id));
-        $sent_to = $this->db->get_where('users', array('id' => $sent_to_id));
+        $sent_by = $this->db->get_where('users', array('id' => $sent_by_id))->row_array();
+        $sent_to = $this->db->get_where('users', array('id' => $sent_to_id))->row_array();
+
+        $sent_by = $sent_by['name'];
+        $sent_to = $sent_to['name'];
 
         $data = array(
             'sent_by' => $sent_by,
@@ -40,8 +43,11 @@ class Request_model extends CI_Model {
 
     // Reject Friend Request
     public function reject_request($sent_by_id = 0, $sent_to_id = 0) {
-        $sent_by = $this->db->get_where('users', array('id' => $sent_by_id));
-        $sent_to = $this->db->get_where('users', array('id' => $sent_to_id));
+        $sent_by = $this->db->get_where('users', array('id' => $sent_by_id))->row_array();
+        $sent_to = $this->db->get_where('users', array('id' => $sent_to_id))->row_array();
+
+        $sent_by = $sent_by['name'];
+        $sent_to = $sent_to['name'];
 
         $data = array(
             'sent_by' => $sent_by,

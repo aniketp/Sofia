@@ -7,11 +7,8 @@ $route['posts/update'] = 'posts/update';
 $route['posts/(:any)'] = 'posts/view/$1';
 $route['posts'] = 'posts/index';
 
-$route['users/profile'] = 'users/profile';
-
-$route["send/(:any)/(:num)"]="request/send_request/$1/$2";
-$route["accept/(:any)/(:num)"]="request/accept_request/$1/$2";
-$route["reject/(:any)/(:num)"]="request/reject_request/$1/$2";
+$route['profile/(:any)'] = 'users/profile/$1';
+$route['friends'] = 'users/friends';
 
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';

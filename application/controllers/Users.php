@@ -123,6 +123,11 @@ class Users extends CI_Controller
             redirect('users/login');
         }
 
-        //$data['friends'] = $this->request_model->
+        $user_id = $this->session->userdata['user_id'];
+        $data['apples'] = $this->user_model->get_friends($user_id);
+
+        $this->load->view('templates/header');
+        $this->load->view('users/friends', $data);
+        $this->load->view('templates/footer');
     }
 }

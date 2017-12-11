@@ -13,7 +13,7 @@ class Requests extends CI_Controller {
         $this->request_model->send_request($sent_by_id, $sent_to_id);
 
         // Set the sent request message
-        // $this->session->set_flashdata('request_sent', 'Friend Request has been Sent');
+        $this->session->set_flashdata('request_sent', 'Friend Request has been Sent');
         redirect('');
     }
 

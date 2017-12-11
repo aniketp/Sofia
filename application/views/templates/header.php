@@ -13,8 +13,10 @@
         </div>
         <div id="navbar">
             <ul class="nav navbar-nav">
-                <li><a href="<?php echo site_url(); ?>">Home</a></li>
-                <li><a href="<?php echo site_url(); ?>posts">Posts</a></li>
+                <?php if($this->session->userdata('logged_in')) : ?>
+                    <li><a href="<?php echo site_url(); ?>">Home</a></li>
+                    <li><a href="<?php echo site_url(); ?>posts">Posts</a></li>
+                <?php endif; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if(!$this->session->userdata('logged_in')) : ?>
@@ -58,4 +60,8 @@
 
     <?php if($this->session->flashdata('user_loggedout')): ?>
         <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedout').'</p>'; ?>
+    <?php endif; ?>
+
+    <?php if($this->session->flashdata('request_sent')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('request_sent').'</p>'; ?>
     <?php endif; ?>
