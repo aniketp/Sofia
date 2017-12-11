@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Social Networking</title>
+    <title>Sofia</title>
     <link rel="stylesheet" href="https://bootswatch.com/3/cerulean/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
     <script src="http://cdn.ckeditor.com/4.5.11/standard/ckeditor.js"></script>
@@ -9,13 +9,14 @@
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="<?php echo site_url(); ?>">Social Networking</a>
+            <a class="navbar-brand" href="<?php echo site_url(); ?>">Sofia</a>
         </div>
         <div id="navbar">
             <ul class="nav navbar-nav">
                 <?php if($this->session->userdata('logged_in')) : ?>
                     <li><a href="<?php echo site_url(); ?>">Home</a></li>
                     <li><a href="<?php echo site_url(); ?>posts">Posts</a></li>
+                    <li><a href="<?php echo site_url(); ?>friends">Friend List</a></li>
                 <?php endif; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">

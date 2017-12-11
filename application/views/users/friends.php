@@ -7,8 +7,8 @@
             <p><?php echo $friend['status']; ?></p>
 
             <?php if($friend['status'] === 'Pending' ): ?>
-                <p>Accept</p>
-                <p>Reject</p>
+                <p><a href="<?php echo site_url(); ?>request/accept_request">Accept</a></p>
+                <p><a href="<?php echo site_url(); ?>request/reject_request">Reject</a></p>
             <?php else: ?>
                 <p><?php echo $friend['status']; ?></p>
             <?php endif; ?>
