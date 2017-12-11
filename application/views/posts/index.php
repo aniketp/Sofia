@@ -4,7 +4,7 @@
 	<div class="row">
 
 		<div class="col-md-12">
-			<small class="post-date">Posted on: <?php echo $post['created_at']; ?> in <strong><?php echo $post['name']; ?></strong></small><br>
+			<small class="post-date">Posted on: <?php echo $post['created_at']; ?></small><br>
 		<?php echo word_limiter($post['body'], 60); ?>
 		<br><br>
 		<p><a class="btn btn-default" href="<?php echo site_url('/posts/'.$post['slug']); ?>">Read More</a></p>
