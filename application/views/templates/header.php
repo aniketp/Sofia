@@ -65,3 +65,11 @@
     <?php if($this->session->flashdata('request_sent')): ?>
         <?php echo '<p class="alert alert-success">'.$this->session->flashdata('request_sent').'</p>'; ?>
     <?php endif; ?>
+
+    <?php if($this->session->flashdata('request_accepted')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('request_rejected').'</p>'; ?>
+    <?php endif; ?>
+
+    <?php if($this->session->flashdata('request_rejected')): ?>
+        <?php echo '<p class="alert alert-success">'.$this->session->flashdata('request_rejected').'</p>'; ?>
+    <?php endif; ?>
