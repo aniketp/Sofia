@@ -106,26 +106,23 @@ class Users extends CI_Controller
     }
 
     // User Profile
-    public function profile($id)
-    {
+    public function profile($id){
+
         $data['user'] = $this->user_model->get_details($id);
 
-        if (empty($data['user'])) {
-            $this->session->set_flashdata('user_not_found', 'Requested User does not exist');
-            redirect('');
+        $this->load->view('templates/header');
+        $this->load->view('users/profile', $data);
+        $this->load->view('templates/footer');
 
-        } else {
-            $this->load->view('templates/header');
-            $this->load->view('users/profile', $data);
-            $this->load->view('templates/footer');
+    }
+
+    // See your friends
+    public function friends(){
+        // Check login
+        if(!$this->session->userdata('logged_in')){
+            redirect('users/login');
         }
 
-        $this->form_validation->set_rules('requesting', 'Requesting', 'required');
-
-        if ($this->form_validation->run() === TRUE) {
-            $this->load->model('request_model');
-            $this->request_model->send_request($this->session->userdata('user_id'), $id);
-            redirect('');
-        }
+        //$data['friends'] = $this->request_model->
     }
 }

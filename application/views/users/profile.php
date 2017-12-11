@@ -3,7 +3,4 @@
 <p><?php echo $user['name'] ?></p>
 <p><?php echo $this->session->userdata['user_id'] ?></p>
 
-<?php echo form_open('users/profile'); ?>
-    <input type="hidden" name="requesting">
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<li><a href="<?php echo site_url(); ?>requests/send_request/<?php echo $user['id'] ?>">Send Friend Request</a></li>

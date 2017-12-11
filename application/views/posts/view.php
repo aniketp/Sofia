@@ -31,10 +31,6 @@
 		<input type="text" name="name" class="form-control">
 	</div>
 	<div class="form-group">
-		<label>Email</label>
-		<input type="text" name="email" class="form-control">
-	</div>
-	<div class="form-group">
 		<label>Body</label>
 		<textarea name="body" class="form-control"></textarea>
 	</div>
