@@ -14,13 +14,17 @@ issues, as well as missing features.
 
 Assuming you have LAMP server installed, simply put the directory content within apache main folder
 
-``` shell
+``` bash
  git clone git@github.com/aniketp41/sofia.git sofia
  sudo mv sofia /var/www/html/				# Needs root permission
 
 ```
 
 ## Database Setup
+
+```bash
+ mysql -u <username> -p < sofia.sql
+```
 
 
 Configure your MySQL database in `config/database.php`
@@ -31,18 +35,9 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => '',
 	'password' => '',
-	'database' => '',
+	'database' => 'sofia',
 	...
 );
 
 ```
 After basic setup, navigate to `localhost/sofia` to access the webapp.
-
-## Resources
-
-*  `User Guide <https://codeigniter.com/docs>`_
-*  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
-*  `Community Forums <http://forum.codeigniter.com/>`_
-*  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
-*  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
