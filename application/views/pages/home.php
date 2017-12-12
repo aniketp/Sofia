@@ -1,2 +1,2 @@
 <h2><?= $title ?></h2>
-<p>Welcome to the Facebook</p>
+<p>Welcome to <i>Sofia</i></p>
